@@ -1,3 +1,4 @@
 loto.machine:
+  profile : dev
   ip : 192.168.31.01
   port : 81
