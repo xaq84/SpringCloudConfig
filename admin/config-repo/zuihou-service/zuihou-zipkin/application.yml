@@ -1,3 +1,4 @@
+
 logging:
   path: ./logs/zuihou-zipkin
   file: ${logging.path}/root.log
@@ -11,29 +12,29 @@ spring:
   application:
     name: zuihou-zipkin
   sleuth:
-    enabled: false # ±íÊ¾µ±Ç°³ÌĞò²»Ê¹ÓÃsleuth
+    enabled: false # è¡¨ç¤ºå½“å‰ç¨‹åºä¸ä½¿ç”¨sleuth
   rabbitmq:
-    host: zuihou.rabbitmq.host # ÔÚhostsÎÄ¼şÖĞÅäÖÃµØÖ·
+    host: zuihou.rabbitmq.host # åœ¨hostsæ–‡ä»¶ä¸­é…ç½®åœ°å€
     port: 5672
     username: guest
     password: guest
   datasource:
-    schema[0]: classpath:/zipkin.sql #Êı¾İ¿â½Å±¾´´½¨µØÖ·£¬µ±ÓĞ¶à¸öÊÇ¿ÉÊ¹ÓÃ[x]±íÊ¾¼¯ºÏµÚ¼¸¸öÔªËØ
-    #spring bootÊı¾İÔ´ÅäÖÃ
+    schema[0]: classpath:/zipkin.sql #æ•°æ®åº“è„šæœ¬åˆ›å»ºåœ°å€ï¼Œå½“æœ‰å¤šä¸ªæ˜¯å¯ä½¿ç”¨[x]è¡¨ç¤ºé›†åˆç¬¬å‡ ä¸ªå…ƒç´ 
+    #spring bootæ•°æ®æºé…ç½®
     url: jdbc:mysql://zuihou.mysql.host:3306/zuihou_zipkin_dev?serverTimezone=CTT&characterEncoding=utf8&useUnicode=true&useSSL=false
     username: root
-    password: root     # ÕâÀï²»ĞèÒª¼ÓÃÜ
+    password: root     # è¿™é‡Œä¸éœ€è¦åŠ å¯†
     driver-class-name: com.mysql.cj.jdbc.Driver
     initialize: true
     continue-on-error: true
 
-# ±íÊ¾zipkinÊı¾İ´æ´¢·½Ê½ÊÇmysql
+# è¡¨ç¤ºzipkinæ•°æ®å­˜å‚¨æ–¹å¼æ˜¯mysql
 zipkin:
   storage:
     type: mysql
 #  collector:
 #    http:
-#      enabled: true  # ÕâÀï¿ªÆôÁËhttpÄ£Ê½£¬²»È·¶¨ÊÇ×ßrabbitmq£¬»¹ÊÇhttp ½øĞĞ¼à¿ØµÄ
+#      enabled: true  # è¿™é‡Œå¼€å¯äº†httpæ¨¡å¼ï¼Œä¸ç¡®å®šæ˜¯èµ°rabbitmqï¼Œè¿˜æ˜¯http è¿›è¡Œç›‘æ§çš„
 #    rabbitmq:
 #      addresses: zuihou.rabbitmq.host:5672
 #      username: guest
@@ -69,4 +70,4 @@ security:
 endpoints:
   health:
     enabled: true
-    sensitive: true  #actuatorµÄhealth½Ó¿ÚÊÇ·ñĞèÒª°²È«±£Ö¤
+    sensitive: true  #actuatorçš„healthæ¥å£æ˜¯å¦éœ€è¦å®‰å…¨ä¿è¯
