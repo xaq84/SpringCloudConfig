@@ -17,3 +17,8 @@ logging:
   common-pattern: '%d{HH:mm:ss.SSS}:[%5p] [%t] [%C{1}:%M:%L] --> %m%n'
   level:
     console: INFO
+
+
+we.config:
+  ip: 192.168.31.36
+  port: 6201
